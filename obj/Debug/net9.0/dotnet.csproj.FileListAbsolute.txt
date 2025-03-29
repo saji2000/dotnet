@@ -26,3 +26,4 @@
 /Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.pdb
 /Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.genruntimeconfig.cache
 /Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/ref/dotnet.dll
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.sourcelink.json
