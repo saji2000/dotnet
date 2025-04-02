@@ -1,8 +1,8 @@
 namespace dotnet.Dtos;
 
-public record CreateGameDto(
+public record UpdateGameDto(
     string Name, 
     string Genre, 
     decimal Price,
     DateOnly ReleaseDate
-    );
+);
