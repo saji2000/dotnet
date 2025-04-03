@@ -13,7 +13,17 @@ List<GameDto> games = [new (1, "Gta 6", "Open World", 59.99M, new DateOnly(2026,
 app.MapGet("/games", () => games);
 
 // GET /games/id
-app.MapGet("/games/{id}", (int id) => games.Find(game => game.Id == id)).WithName(GetGameEndPoint);
+app.MapGet("/games/{id}", (int id) =>
+{
+    var index = games.FindIndex(game => game.Id == id);
+
+    if (index != -1)
+    {
+        return Results.Ok(games[index]);
+    }
+    return Results.NotFound();
+    
+}).WithName(GetGameEndPoint);
 
 // POST /games
 app.MapPost("/games", (CreateGameDto newGame) =>
@@ -35,7 +45,6 @@ app.MapPost("/games", (CreateGameDto newGame) =>
 app.MapPut("/games/{id}", (int id, UpdateGameDto game) =>
 {
     var index = games.FindIndex(game => game.Id == id);
-    Console.WriteLine(index);
     if (index != -1)
     {
         GameDto newGame = new (id, game.Name, game.Genre, game.Price, game.ReleaseDate);
