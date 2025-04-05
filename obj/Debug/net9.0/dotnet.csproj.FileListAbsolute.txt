@@ -27,3 +27,9 @@
 /Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.genruntimeconfig.cache
 /Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/ref/dotnet.dll
 /Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.sourcelink.json
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/bin/Debug/net9.0/MinimalApis.Extensions.dll
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/bin/Debug/net9.0/MiniValidation.dll
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.csproj.AssemblyReference.cache
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.MvcApplicationPartsAssemblyInfo.cs
+/Users/seyedsajjaddaneshmand/development/dotnet/dotnet/obj/Debug/net9.0/dotnet.csproj.Up2Date

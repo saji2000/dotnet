@@ -10,13 +10,14 @@ public static class GamesEndpoints
         new (2, "Gta 7", "Open World", 89.99M, new DateOnly(2046, 10, 20))
     ];
 
-    public static WebApplication MapGamesEndpoints(this WebApplication app)
+    public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app)
     {
+        var group = app.MapGroup("games").WithParameterValidation();
         // GET /games
-        app.MapGet("/games", () => games);
+        group.MapGet("/", () => games);
         
         // GET /games/id
-        app.MapGet("/games/{id}", (int id) =>
+        group.MapGet("/{id}", (int id) =>
         {
             var index = games.FindIndex(game => game.Id == id);
         
@@ -29,7 +30,7 @@ public static class GamesEndpoints
         }).WithName(GetGameEndPoint);
         
         // POST /games
-        app.MapPost("/games", (CreateGameDto newGame) =>
+        group.MapPost("/", (CreateGameDto newGame) =>
         {
             GameDto game = new (
                 games.Count + 1,
@@ -37,15 +38,14 @@ public static class GamesEndpoints
                 newGame.Genre,
                 newGame.Price,
                 newGame.ReleaseDate
-                );
-            
+            );
             games.Add(game);
-        
+
             return Results.CreatedAtRoute(GetGameEndPoint, new { id = game.Id }, game);
         });
         
         // PUT /games/id
-        app.MapPut("/games/{id}", (int id, UpdateGameDto game) =>
+        group.MapPut("/{id}", (int id, UpdateGameDto game) =>
         {
             var index = games.FindIndex(game => game.Id == id);
             if (index != -1)
@@ -58,7 +58,7 @@ public static class GamesEndpoints
             return Results.NotFound();
         });
         
-        app.MapDelete("/games/{id}", (int id) =>
+        group.MapDelete("/{id}", (int id) =>
         {
             var index = games.FindIndex(game => game.Id == id);
         
@@ -71,7 +71,7 @@ public static class GamesEndpoints
             return Results.NotFound();
         });
 
-        return app;
+        return group;
     }
 
 }
