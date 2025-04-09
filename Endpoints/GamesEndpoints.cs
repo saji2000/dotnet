@@ -10,6 +10,7 @@ public static class GamesEndpoints
         new (2, "Gta 7", "Open World", 89.99M, new DateOnly(2046, 10, 20))
     ];
 
+
     public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app)
     {
         var group = app.MapGroup("games").WithParameterValidation();
